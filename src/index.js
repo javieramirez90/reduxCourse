@@ -6,12 +6,17 @@ import * as serviceWorker from "./serviceWorker";
 import generateStore from "./redux/store/createStore";
 
 import { Provider } from "react-redux";
+import { BrowserRouter } from 'react-router-dom'
+import { fetchUsersList} from './redux/actions/userActions'
 
 export let store = generateStore();
+fetchUsersList()(store.dispatch, store.getState)
 
 let WithStore = () => (
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>
 );
 

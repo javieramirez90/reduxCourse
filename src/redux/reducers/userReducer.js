@@ -2,7 +2,8 @@ import { combineReducers } from "redux";
 
 import {
   TYPING_CREDENTIALS,
-  SET_USER_DATA_SUCCESS
+  SET_USER_DATA_SUCCESS,
+  FETCH_USERS_LIST_SUCCESS
 } from "../actions/userActions";
 
 
@@ -34,7 +35,8 @@ function array(state = [], action) {
   switch (action.type) {
     case "ADD_USER":
       return [state, action.user];
-
+    case FETCH_USERS_LIST_SUCCESS:
+      return action.payload
     default:
       return state;
   }

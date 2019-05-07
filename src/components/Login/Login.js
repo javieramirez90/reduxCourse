@@ -4,7 +4,7 @@ import {
   setUserData
 } from "../../redux/actions/userActions";
 import { connect } from "react-redux";
-import { login } from "../../firebase";
+// import { login } from "../../firebase";
 
 //primer paso para miagrar a react-redux
 

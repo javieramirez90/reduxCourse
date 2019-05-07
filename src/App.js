@@ -1,8 +1,10 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-// import Login from "./components/Login/Login";
+import Login from "./components/Login/Login";
 import Profile from "./components/Profile";
+import Users  from './components/Users'
+import { Route } from 'react-router-dom' //Redirect
 
 function App() {
   return (
@@ -10,7 +12,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         {/* <Login /> */}
-        <Profile />
+        {/* <Redirect exact path="/" push="/login" /> */}
+        <Route path="/profile" component={Profile}></Route>
+        <Route path="/users" component={Users}></Route>
+        <Route path="/login" component={Login}></Route>
       </header>
     </div>
   );
