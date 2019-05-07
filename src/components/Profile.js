@@ -12,6 +12,16 @@ class Profile extends Component{
 
   }
 
+  onChanges = e => {
+    let user = {
+      name: this.props.name,
+      email: this.props.email,
+      bio: this.props.bio
+    }
+    user[e.target.name] = e.target.value
+    this.props.updateUserData(user)
+  }
+
   render(){
     let {editing} = this.state
     //consumir los props directamente es la forma correcta de hacerlo
@@ -33,15 +43,15 @@ class Profile extends Component{
           <form action="">
             <p>
               Tu nombre: 
-              <input value={name} type="text" name="name" id=""/>
+              <input onChange={this.onChanges} value={name} type="text" name="name" id=""/>
             </p>
             <p>
               Tu email: 
-              <input value={email} type="email" name="email" id=""/>
+              <input onChange={this.onChanges} value={email} type="email" name="email" id=""/>
             </p>
             <p>
               Tu Bio: 
-              <input value={bio} type="text" name="bio" id=""/>
+              <input onChange={this.onChanges} value={bio} type="text" name="bio" id=""/>
             </p>
             <button onClick={() => this.setState({editing: false})}>Guardar</button>
           </form>
