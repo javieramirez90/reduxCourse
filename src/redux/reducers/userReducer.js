@@ -11,6 +11,7 @@ function current(state = {}, action) {
     case "UPDATE_USER_DATA":
       return action.payload
     case "REMOVE_USER_DATA":
+      return action.payload
     case "GET_USER_DATA":
     case "MERGE_USER_DATA":
     default:

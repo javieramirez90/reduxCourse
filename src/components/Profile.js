@@ -22,6 +22,7 @@ class Profile extends Component{
     this.props.updateUserData(user)
   }
 
+
   render(){
     let {editing} = this.state
     //consumir los props directamente es la forma correcta de hacerlo
@@ -53,8 +54,10 @@ class Profile extends Component{
               Tu Bio: 
               <input onChange={this.onChanges} value={bio} type="text" name="bio" id=""/>
             </p>
-            <button onClick={() => this.setState({editing: false})}>Guardar</button>
+            
           </form>
+          <button onClick={() => this.setState({editing: false})}>Guardar</button>
+          <button onClick={this.props.removeUserData}>Borrar Registro</button>
         </section>
         }
         <section>

@@ -12,9 +12,10 @@ export const REMOVE_USER_DATA = "REMOVE_USER_DATA"
 
 //2.-Actions
 
-function removeUserDataSuccess(data){
+function removeUserDataSuccess(payload){
   return{
     type: REMOVE_USER_DATA,
+    payload
   }
 }
 
@@ -42,7 +43,13 @@ function setUserDataSuccess(user) {
 }
 
 export let removeUserData = () => (dispatch) => {
-  dispatch(removeUserDataSuccess())
+  //Esto es hardcodeo, pero si cambian, es necesario hacerlo aquí
+  let current = {
+    name: '',
+    email: '',
+    bio: ''
+  }
+  dispatch(removeUserDataSuccess(current))
 }
 
 export let updateUserData = (data) => (dispatch) => {
