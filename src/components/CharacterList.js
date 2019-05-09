@@ -8,6 +8,10 @@ function CharacterList({onGetCharacters, characters}) {
     onGetCharacters()
   },[onGetCharacters])
 
+  function traeMas(){
+    onGetCharacters()
+  }
+
   return (
     <div>
       <ul>
@@ -16,6 +20,7 @@ function CharacterList({onGetCharacters, characters}) {
           characters.map((c, i) => <li key={i}>{c.name}</li>)
         }
       </ul>
+      <button onClick={traeMas} >Cargar más</button>
     </div>
   )
 }
